@@ -1,0 +1,44 @@
+/* ========================================
+   Animations — PrepConnect
+   ======================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes zoomOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.95); }
+}
+
+/* Dialog overlay animation */
+.dialog-overlay[data-state="open"] {
+  animation: fadeIn var(--transition-default) ease forwards;
+}
+.dialog-overlay[data-state="closed"] {
+  animation: fadeOut var(--transition-default) ease forwards;
+}
+
+/* Dialog content animation */
+.dialog-content[data-state="open"] {
+  animation: zoomIn var(--transition-default) ease forwards;
+}
+.dialog-content[data-state="closed"] {
+  animation: zoomOut var(--transition-default) ease forwards;
+}
